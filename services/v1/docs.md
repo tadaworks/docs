@@ -363,8 +363,8 @@ Sessions contain user profile and token detail that's retrieved in multi-step lo
 
 Parameters:
 
-**requestId**: The 32-character alphanumeric string that was used to log into the app
-**requestKey**: The 32-character alphanumeric string that was provided in the redirect URI
+* **requestId**: The 32-character alphanumeric string that was used to log into the app
+* **requestKey**: The 32-character alphanumeric string that was provided in the redirect URI
 
 Response Codes:
 
