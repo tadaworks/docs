@@ -57,9 +57,35 @@ Likewise, if we only want user `coolSpot`'s coca-cola can count, we can perform 
 
 Service URL: `https://<appId>.tadadb.com`, where `<appId>` is your Tada app's **App ID**.
 
+As described in the previous section, App Data can be written to **any path**.
+
+To see this in action, consider an **HTTP POST** of `{ "hello": "world" }` to `https://<appId>.tadadb.com/this/is/a/really/long/example/url`
+
+An **HTTP GET** to the database root, i.e. `https://<appId>.tadadb.com/`, now returns the following:
+
+```json
+{
+  "this": {
+    "is": {
+      "a": {
+        "really": {
+          "long": {
+            "example": {
+              "url": {
+                "hello": "world"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
 ### Create (insert)
 
-| Route       | Any |
+| Route       | Any (e.g. `/any/database/location`) |
 | ----------- | --- |
 | Description | Inserts data at the specified location. This insert fails if data already exists at the specificed location. |
 | HTTP method | POST |
@@ -79,7 +105,7 @@ Response Codes:
 
 ### Read (get)
 
-| Route       | Any |
+| Route       | Any (e.g. `/any/database/location`) |
 | ----------- | --- |
 | Description | Retrieves data from the specified location. |
 | HTTP method | GET |
@@ -97,7 +123,7 @@ Response Codes:
 
 ### Update (upsert)
 
-| Route       | Any |
+| Route       | Any (e.g. `/any/database/location`) |
 | ----------- | --- |
 | Description | Updates data at the specified location, inserting data if none exist. |
 | HTTP method | PATCH |
@@ -116,7 +142,7 @@ Response Codes:
 
 ### Delete (remove)
 
-| Route       | Any |
+| Route       | Any (e.g. `/any/database/location`) |
 | ----------- | --- |
 | Description | Removes data from the specified location. |
 | HTTP method | DELETE |
