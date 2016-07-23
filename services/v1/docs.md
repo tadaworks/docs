@@ -41,8 +41,8 @@ If we want to access user `coolSpot`'s can counts, we can perform an **HTTP GET*
 
 ```JSON
 {
-  "a&w": 13
-  "coca-cola": 32
+  "a&w": 13,
+  "coca-cola": 32,
   "sprite": 25
 }
 ```
